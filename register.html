@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Register Page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Montserrat:ital@1&family=Roboto+Condensed:ital@1&family=Roboto:ital@1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    .row {
+      --bs-gutter-x: 0;
+      background-color: azure;
+    }
+    #login {
+      color: purple;
+      text-decoration: none;
+      font-family: "Roboto", sans-serif;
+    }
+    .myLogo {
+      border-radius: 50px;
+      margin: 50px 0 20px 80px;
+    }
+    input {
+      margin-right: 50px;
+    }
+    #labelfirstname,
+    #labellastname,
+    #labelemail,
+    #labelphone {
+      padding-top: 7px;
+    }
+    #labelfirstname,
+    #labellastname,
+    #labelemail,
+    #labelphone,
+    #labelpassword,
+    #labelpassword1 {
+      width: 15rem;
+      margin-bottom: 0;
+      padding-bottom: 0;
+      font-family: "Roboto Condensed", sans-serif;
+    }
+    label > input {
+      margin: 0;
+    }
+    button {
+      width: 17.5rem;
+      margin-top: 10px;
+    }
+  </style>
+  <body
+    class="d-flex justify-content-center align-items-center"
+    style="background-color: lightskyblue"
+  >
+    <!-- <h1>Hello, world!</h1> -->
+
+    <div class="container my-4">
+      <div class="row">
+        <div
+          class="col-md-6 d-flex flex-column justify-content-center align-items-center"
+          style="height: 135vh"
+        >
+          <form
+            action="/"
+            method="post"
+            class="was-validated"
+            novalidate
+            onsubmit="validate()"
+          >
+            <div>
+              <h1 style="font-family: 'Lato', sans-serif">Register</h1>
+              <p style="font-family: 'Lato', sans-serif">
+                Already registered?&nbsp;<a href="login.html" id="login"
+                  >Login</a
+                >
+              </p>
+            </div>
+            <img
+              src="V2_MainLogo.png"
+              height="100px"
+              width="100px"
+              class="myLogo"
+              alt=""
+            />
+            <label
+              for="exampleFormControlInput"
+              class="form-label d-flex align-items-center"
+              id="labelfirstname"
+              >First Name</label
+            >
+            <div class="form-floating mb-1">
+              <input
+                type="text"
+                class="form-control"
+                id="floatingInput1"
+                placeholder="Firstname"
+                required
+              />
+              <label for="floatingInput">Your First Name</label>
+            </div>
+            <label
+              for="exampleFormControlInput0"
+              class="form-label d-flex align-items-center"
+              id="labellastname"
+              >Last Name</label
+            >
+            <div class="form-floating mb-1">
+              <input
+                type="text"
+                class="form-control"
+                id="floatingInput2"
+                placeholder="Lastname"
+                required
+              />
+              <label for="floatingInput">Your Last Name</label>
+            </div>
+            <label
+              for="exampleFormControlInput1"
+              class="form-label d-flex align-items-center"
+              id="labelemail"
+              >Email address</label
+            >
+            <div class="form-floating mb-1">
+              <input
+                type="email"
+                class="form-control"
+                id="floatingInput"
+                placeholder="name@example.com"
+                required
+              />
+              <label for="floatingInput">Eg. you@example.com</label>
+            </div>
+            <label
+              for="exampleFormControlInput2"
+              class="form-label d-flex align-items-center"
+              id="labelphone"
+              >Phone Number</label
+            >
+            <div class="form-floating mb-1">
+              <input
+                type="text"
+                class="form-control"
+                id="floatingInput3"
+                placeholder="1234567890"
+                required
+              />
+              <label for="floatingInput">10 digit mobile number</label>
+            </div>
+            <label
+              for="inputPassword"
+              class="col-sm-2 col-form-label"
+              id="labelpassword"
+              >Password</label
+            >
+
+            <div class="form-floating mb-1">
+              <input
+                type="password"
+                class="form-control"
+                id="floatingPassword"
+                placeholder="Password"
+                required
+              />
+              <label for="floatingPassword">Minimum 6 characters</label>
+            </div>
+            <label
+              for="inputPassword"
+              class="col-sm-2 col-form-label"
+              id="labelpassword1"
+              >Confirm Password</label
+            >
+
+            <div class="form-floating mb-1">
+              <input
+                type="password"
+                class="form-control"
+                id="floatingPassword1"
+                placeholder="Password Check"
+                required
+              />
+              <label for="floatingPassword">Type Password Again</label>
+            </div>
+            <div class="checkbox mb-3 my-3">
+              <label>
+                <input type="checkbox" value="remember-me" /> Save Password?
+              </label>
+            </div>
+            <a href="#" id=""
+              ><button
+                type="button"
+                class="btn btn-primary"
+                style="font-family: 'Montserrat', sans-serif"
+              >
+                Register
+              </button></a
+            >
+            <p class="mt-5 mb-3 text-muted">© 2020–2022</p>
+          </form>
+        </div>
+        <div class="col-md-6 d-flex justify-content-center" id="image">
+          <img src="signup-bg.jpg" height="100%" width="100%" alt="" />
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+  <script>
+    (() => {
+      "use strict";
+
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      const forms = document.querySelectorAll(".needs-validation");
+
+      // Loop over them and prevent submission
+      Array.from(forms).forEach((form) => {
+        form.addEventListener(
+          "submit",
+          (event) => {
+            if (!form.checkValidity()) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+
+            form.classList.add("was-validated");
+          },
+          false
+        );
+      });
+    })();
+
+    function validate() {
+      let fname = document.getElementById("floatingInput1").value;
+      let lname = document.getElementById("floatingInput2").value;
+      let emailid = document.getElementById("floatingInput3").value;
+      let phone = document.getElementById("floatingInput1").value;
+      let password = document.getElementById("floatingPassword").value;
+      let confirmpassword = document.getElementById("floatingPassword1").value;
+
+      if (fname.length > 3 && fname.length < 25) {
+        document.getElementById("fname").focus();
+      } else {
+        alert("Firstname should be from 3-25 characters");
+        document.getElementById("fname").focus();
+      }
+
+      if (lname.length > 3 && lname.length < 25) {
+        document.getElementById("lname").focus();
+      } else {
+        alert("Lastname should be from 3-25 characters");
+        document.getElementById("lname").focus();
+      }
+
+      let mailformat =
+        /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+      if (emailid.value.match(mailformat)) {
+        alert("This email ID is your primary email");
+        emailid.focus();
+      } else {
+        alert(
+          "Invalid email address! Email ID should be of form - abc123@xyz.com"
+        );
+        emailid.focus();
+      }
+
+      let phoneno = /^\d{10}$/;
+      if (phone.value.match(phoneno)) {
+        alert("This phone number is your primary phone");
+        phone.focus();
+      } else {
+        alert("Phone number should be numeric!");
+        phone.focus();
+      }
+
+      let passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+      if (password.value.match(passw)) {
+        alert("Password Accepted");
+        password.focus();
+      } else {
+        alert(
+          "Invalid Password! Password should have atleast one lowercase and uppercase character, one numeric digit and should be in between 6-20 characters"
+        );
+        password.focus();
+      }
+
+      if (confirmpassword.value.match(password)) {
+        alert("Both Passwords are identical");
+        confirmpassword.focus();
+      } else {
+        alert("Passwords should be identical! But passwords do not match");
+        confirmpassword.focus();
+      }
+    }
+  </script>
+</html>

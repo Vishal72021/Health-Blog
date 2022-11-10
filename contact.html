@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact Form</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Montserrat:ital@1&family=Roboto+Condensed:ital@1&family=Roboto:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+        opacity: 0.6;
+        background: url("contact-bg.jpg");
+      }
+      h2 {
+        text-align: center;
+        padding-bottom: 20px;
+      }
+      .fancyinfo {
+        display: flex;
+        justify-content: flex-start;
+        margin: 30px 0 30px 0;
+        gap: 1rem;
+      }
+      #button {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <h1>Hello, world!</h1> -->
+
+    <!-- navbar header -->
+    <div
+      class="container my-4"
+      style="font-family: 'Roboto', sans-serif; font-weight: bold"
+    >
+      <header class="p-3 text-bg-danger rounded">
+        <div class="container">
+          <div
+            class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+          >
+            <a
+              href="/"
+              class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none dropdown toggle"
+              data-bs-toggle="dropdown"
+            >
+              <!-- <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg> -->
+              <img
+                src="V2_MainLogo.png"
+                width="40px"
+                height="40px"
+                style="border-radius: 20px"
+                alt=""
+              />
+            </a>
+            <div class="dropdown">
+              <a
+                href="#"
+                class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-dark text-decoration-none dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <svg class="bi me-2" width="40" height="32">
+                  <use xlink:href="#bootstrap"></use>
+                </svg>
+              </a>
+              <ul class="dropdown-menu text-small shadow">
+                <li>
+                  <a class="dropdown-item active" href="#" aria-current="page"
+                    >Overview</a
+                  >
+                </li>
+                <li><a class="dropdown-item" href="#">Inventory</a></li>
+                <li><a class="dropdown-item" href="#">Customers</a></li>
+                <li><a class="dropdown-item" href="#">Products</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Reports</a></li>
+                <li><a class="dropdown-item" href="#">Analytics</a></li>
+              </ul>
+            </div>
+
+            <ul
+              class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
+            >
+              <li>
+                <a href="index.html" class="nav-link px-2 text-white">Home</a>
+              </li>
+              <li>
+                <a href="about.html" class="nav-link px-2 text-white">About</a>
+              </li>
+              <li>
+                <a href="membership.html" class="nav-link px-2 text-white"
+                  >Go Pro</a
+                >
+              </li>
+              <li>
+                <a href="fitnessdiet.html" class="nav-link px-2 text-white"
+                  >Diet and Fitness</a
+                >
+              </li>
+              <li>
+                <a href="diseases.html" class="nav-link px-2 text-white"
+                  >Diseases</a
+                >
+              </li>
+              <li>
+                <a href="#" class="nav-link px-2 text-dark">Contact Us</a>
+              </li>
+            </ul>
+
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+              <input
+                type="search"
+                class="form-control form-control-dark text-bg-dark"
+                placeholder="Search..."
+                aria-label="Search"
+              />
+            </form>
+
+            <div class="text-end">
+              <a href="login.html"
+                ><button
+                  type="button"
+                  class="btn btn-outline-light me-2"
+                  style="font-family: 'Lato', sans-serif"
+                >
+                  Login
+                </button></a
+              >
+              <a href="register.html"
+                ><button
+                  type="button"
+                  class="btn btn-warning"
+                  style="font-family: 'Lato', sans-serif"
+                >
+                  Register
+                </button></a
+              >
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+
+    <!-- form -->
+    <div class="container">
+      <div class="row g-5" style="font-family: 'Roboto Condensed', sans-serif">
+        <div class="col-md-7">
+          <form
+            action="/"
+            method="post"
+            class="row g-3 needs-validation was-validated"
+            novalidate=""
+            onsubmit="validate()"
+          >
+            <div class="container">
+              <div class="container">
+                <div class="input-group">
+                  <span class="input-group-text">First and last name</span>
+                  <input
+                    type="text"
+                    aria-label="First name"
+                    class="form-control"
+                    id="fname"
+                    required
+                  />
+                  <input
+                    type="text"
+                    aria-label="Last name"
+                    class="form-control"
+                    id="lname"
+                    required
+                  />
+                  <div class="valid-feedback">
+                    Looks good if you do not see an alert on top
+                  </div>
+                  <div class="invalid-feedback">
+                    Firstname and Lastname should be from 3 to 25 characters
+                  </div>
+                </div>
+              </div>
+              <div class="container">
+                <div class="input-group flex-nowrap my-4">
+                  <span class="input-group-text" id="addon-wrapping">@</span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Username"
+                    aria-label="Username"
+                    aria-describedby="addon-wrapping"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="container">
+                <div class="row mb-3 my-4">
+                  <label for="inputEmail3" class="col-sm-2 col-form-label"
+                    >Email</label
+                  >
+                  <div class="col-sm-10">
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="inputEmail3"
+                      required
+                    />
+                    <div class="valid-feedback">
+                      Email Registered if you didn't see an alert up there
+                    </div>
+                    <div class="invalid-feedback">
+                      Please choose a valid email
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="container">
+                <div class="mb-3">
+                  <label for="exampleFormControlTextarea1" class="form-label"
+                    >Example textarea</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="exampleFormControlTextarea1"
+                    rows="3"
+                    required
+                  ></textarea>
+                  <div class="valid-feedback">Understood</div>
+                  <div class="invalid-feedback">Can't be blank</div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleFormControlTextarea1" class="form-label"
+                    >Example textarea</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="exampleFormControlTextarea1"
+                    rows="3"
+                    required
+                  ></textarea>
+                  <div class="valid-feedback">Understood</div>
+                  <div class="invalid-feedback">Can't be blank</div>
+                </div>
+              </div>
+              <div id="button" class="container">
+                <button type="submit" class="btn btn-primary">Send</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-5">
+          <h2>Our contact details</h2>
+          <div class="fancyinfo">
+            <img
+              src="https://webstockreview.net/images/address-icon-png-5.png"
+              height="30px"
+              width="30px"
+              alt=""
+            />
+            <p>
+              Plot no.-123/4567, DreamLand, Dreamer's Paradise, Dream,
+              FancyState, FancyCountry, PIN-987654
+            </p>
+          </div>
+          <div class="fancyinfo">
+            <img
+              src="https://cdn3.iconfinder.com/data/icons/placeholder-3/64/post-office-placeholder-pin-pointer-gps-map-location-256.png"
+              height="30px"
+              width="30px"
+              alt=""
+            />
+            <p>
+              Plot no.-987/1234, DreamCompany, Dreamer's Heaven, Dream,
+              FancyState, FancyCountry, PIN-975310
+            </p>
+          </div>
+          <div class="fancyinfo">
+            <img
+              src="http://cdn.onlinewebfonts.com/svg/img_318661.png"
+              height="30px"
+              width="30px"
+              alt=""
+            />
+            <p>+101-1234567890</p>
+          </div>
+          <div class="fancyinfo">
+            <img
+              src="https://cdn.onlinewebfonts.com/svg/img_521866.png"
+              height="30px"
+              width="30px"
+              alt=""
+            />
+            <p>abc.xyz@fantasyISP.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+  <script>
+    function validate() {
+      let fname = document.getElementById("fname").value;
+      let lname = document.getElementById("lname").value;
+
+      if (fname.length > 3 && fname.length < 25) {
+        document.getElementById("fname").focus();
+      } else {
+        alert("Firstname should be from 3-25 characters");
+        document.getElementById("fname").focus();
+      }
+      
+      if (lname.length > 3 && lname.length < 25) {
+        document.getElementById("lname").focus();
+      } else {
+        alert("Lastname should be from 3-25 characters");
+        document.getElementById("lname").focus();
+      }
+
+      let emailid = document.getElementById("inputEmail3");
+      var mailformat =
+        /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+      if (emailid.value.match(mailformat)) {
+        alert("This email ID will be the primary contact between us");
+        emailid.focus();
+      } else {
+        alert("Invalid email address!");
+        emailid.focus();
+      }
+    }
+  </script>
+</html>
